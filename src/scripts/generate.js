@@ -9,12 +9,8 @@ form.addEventListener("submit", (event) => {
 
     const username = usernameInput.value.trim();
 
-    const theme = (
-        document.querySelector('input[name="theme"]:checked')
 
-    ).value;
-
-    const url = `${window.location.origin}/api/generate?username=${encodeURIComponent(username)}&theme=${theme}`;
+    const url = `${window.location.origin}/api/generate?username=${encodeURIComponent(username)}`;
 
     code.textContent = `<img src="${url}" alt="Gimcard" />`;
 

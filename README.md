@@ -5,13 +5,13 @@ GimCard is a open source web program that can be used to display some basic gith
 THe demo will be uploaded soon under a subdomain of majcek210.dev
 
 ## How it works
-Go to the generate tab enter your username and select the card option, click generate and your good!
+Go to the generate tab enter your username, click generate and your good!
 
 ## Tech stack
 This project is built with typescript, html, css, javascript. Express with typescript was used to make a web server. Html, css and javascript live on the site it self. For the site i decided to use javascript bc compiling this typescript meant for the client, would make it worse for me and for the client.
 
 ## Selfhost
-Look in to the selfhost webpage itself (:
+Use the compose or the Dockefile (:
 
 ## Run as a dev
  ``` 

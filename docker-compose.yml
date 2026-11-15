@@ -1,0 +1,9 @@
+services:
+  gimcard:
+    build: .
+    image: gimcard:latest
+    ports:
+      - "${PORT:-6767}:${PORT:-6767}"
+    env_file:
+      - .env
+    restart: unless-stopped
