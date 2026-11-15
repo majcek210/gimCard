@@ -3,12 +3,15 @@ import { config } from "dotenv";
 import path from "path";
 import helmet from "helmet"
 
+import handleCardDelivery from "./api/card"
+
 config();
 
 const PORT = process.env.PORT || 3000;
 
 const pagesFolder = path.join(__dirname, "pages");
 const assetsFolder = path.join(__dirname,"assets");
+const scriptsFolder = path.join(__dirname,"scripts");
 
 
 function getPage(pageName: string) {
@@ -27,13 +30,19 @@ app.get("/", (req,res) => {
     res.sendFile(getPage("index"))
 })
 
-// generate stuff
-app.get("generate", (req,res) => {
+// card webpage
+app.get("/generate", (req,res) => {
     res.sendFile(getPage("generate"))
 })
 
+//card delivery api
+app.get("/api/generate", handleCardDelivery)
+
 //assets
 app.use("/assets", express.static(assetsFolder))
+
+//scripts
+app.use("/scripts", express.static(scriptsFolder))
 
 // 404
 app.use((req, res) => {

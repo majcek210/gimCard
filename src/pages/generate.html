@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <title>Generate your card</title>
         <meta charset="UTF-8">
@@ -37,8 +37,31 @@
                 text-decoration: none;
                 color: #726f6b
             }
+
+            body {
+                background-color: #1b1a19;
+                color: aliceblue;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .code_showcase {
+                background-color: #726f6b;
+                padding: 20px;
+                
+            }
+
+            .copy-btn {
+                background-color: #383838;
+                border: none;
+                border-radius: 5px;
+            }
+
+            #username {
+                color:#726f6b
+            }
             
         </style>
+        <script src="/scripts/generate.js" defer></script>
     </head>
     <body>
              <div class="navbar">
@@ -49,6 +72,58 @@
                     <a class="navbutton" href="/generate">Generate</a>
                     <a class="navbutton" href="/selfhost">Host your self</a>
                 </div>
+            </div>
+            <div>
+                <div>
+                    <h1>Generate your card</h1>
+                    <p><b>Create</b> & <b>customize</b> your card down bellow</p>
+                </div>
+                <div class="selection_container">
+                    <form id="generate-form">
+                        <p>Username:</p>
+
+                        <input type="text" id="username" name="username">
+
+                        <label>
+                            <input type="radio" value="light" name="theme" checked>
+                            Light
+                        </label>
+                        <label>
+                            <input type="radio" value="dark" name="theme">
+                            Dark
+                        </label>
+                        <input type="submit" value="Generate">
+                    </form>
+                </div>
+                <div class="code_showcase_container">
+                    <h1>Code</h1>
+                    <p>Copy the code bellow and paste it in to your README.md</p>
+                    <div class="code_showcase">
+                        <code>
+                            Generate the card first!
+                        </code>
+                        <button class="copy-btn" onclick="copyText()">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect x="8" y="8" width="13" height="13" rx="2"/>
+                                <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="preview-container" hidden>
+                <p>live preview</p>
+                <img src="" id="card-preview" alt="Generated Github card preview">
             </div>
             <footer>
                 <div class="footer_container">
