@@ -2,7 +2,7 @@
 GimCard is a open source web program that can be used to display some basic github cards. 
 
 ## Demo
-THe demo will be uploaded soon under a subdomain of majcek210.dev
+[Website](https://gimcard.majcek210.dev/)
 
 ## How it works
 Go to the generate tab enter your username, click generate and your good!

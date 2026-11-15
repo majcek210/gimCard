@@ -1,0 +1,10 @@
+services:
+  gimcard:
+    build: .
+    expose:
+      - "6767"
+    environment:
+      - PORT=6767
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_GRAPHQL_URL=https://api.github.com/graphql
+    restart: unless-stopped
