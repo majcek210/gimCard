@@ -14,5 +14,6 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/src/pages ./dist/pages
 COPY --from=build /app/src/assets ./dist/assets
+COPY --from=build /app/src/scripts ./dist/scripts
 EXPOSE 6767
 CMD ["node", "dist/server.js"]
