@@ -30,6 +30,11 @@ app.get("/", (req,res) => {
     res.sendFile(getPage("index"))
 })
 
+//other parts of the site
+app.get("selfhost", (req, res) => {
+    res.sendFile(getPage("selfhost"))
+})
+
 // card webpage
 app.get("/generate", (req,res) => {
     res.sendFile(getPage("generate"))
