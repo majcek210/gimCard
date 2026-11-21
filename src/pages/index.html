@@ -1,80 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>grimCard</title>
-        <style>
-            body {
-                background-color: #1b1a19;
-                color: aliceblue;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            .card_styles {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
 
-            .main_title {
-                font-size:40px;
-                text-decoration: none;
-                color:aliceblue
+<head>
+    <title>grimCard</title>
+    <style>
+      
 
-            }
-            .navbar {
-                display: flex;
-                background-color: #1b1a19;
-                padding: 20px;
-            }
-            .navbutton {
-                padding: 10px;
-                text-decoration: none;
-                background-color: #726f6b;
-                color: wheat;
-                border-radius: 5px;
-                font-size: 20px;
-            }
-            .navlinks {
-                display: flex;
-                padding-left: 20px;
-                gap: 20px;
-            }
+        .card_styles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
 
-            .footer_container {
-                display: flex;
-                justify-content: center;
-                padding: 20px;
-            }
-            .footer_link {
-                text-decoration: none;
-                color: #726f6b
-            }
-            
-        </style>
-    </head>
-    <body>
-            <div class="navbar">
-                    <a href="/" class="main_title">Gimcard</a>
+<body>
+    <div class="navbar">
+        <a href="/" class="main_title">Gimcard</a>
 
-                <div class="navlinks">
-                    <a class="navbutton" href="/generate">Generate</a>
-                </div>
-            </div>
+        <div class="navlinks">
+            <a class="navbutton" href="/generate">Generate</a>
+            <a class="navbutton" href="/selfhost">Selfhost</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="blablabla">
             <h1>Github readme your way!</h1>
             <p>Customizable github profile cards for your profile.</p>
             <h2>Why did I build this?</h2>
-            <p>I wanted to make my github stand out a bit, but all of the current card generators didn't match my liking and style.</p>
-            <p>Then I figured that I still need to make a hackclub project for terra this week, and why not make it open source.</p>
+            <p>I wanted to make my github stand out a bit, but all of the current card generators didn't match my liking
+                and
+                style.</p>
+            <p>Then I figured that I still need to make a hackclub project for terra this week, and why not make it open
+                source.
+            </p>
+        </div>
+        <div class="styles_container">
 
             <h1>Diffrent styles</h1>
             <div class="card_styles">
-                <p>Dark</p>
-
+                <ul>
+                    <li>Dark <br> <img src="/assets/card_styles/1.png" width="250"></li>
+                    <li>Light <br> <img src="/assets/card_styles/1.png" width="250"></li>
+                </ul>
             </div>
-            <footer>
-                <div class="footer_container">
-                    <p>Made by <a class="footer_link" href="https://github.com/majcek210">majcek210</a>. Uptime is not guaranteed.</p>
-                </div>
-            </footer>
-    </body>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <p>Made by <a class="footer_link" href="https://github.com/majcek210">majcek210</a>. Uptime is not
+                guaranteed.</p>
+        </div>
+    </footer>
+</body>
 
 </html>

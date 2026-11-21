@@ -3,6 +3,7 @@ const code = document.querySelector(".code_showcase code")
 const showcacseContainer = document.getElementById("preview-container")
 const cardPreview = document.getElementById("card-preview")
 const usernameInput = document.getElementById("username")
+const copyCodeButton = document.getElementById("copy_btn_code")
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -16,5 +17,15 @@ form.addEventListener("submit", (event) => {
 
     cardPreview.src = url
     showcacseContainer.hidden = false
+    copyCodeButton.hidden = false
     
+})
+
+copyCodeButton.addEventListener("click", () => {
+    const text = code.textContent
+    if (text) {
+        navigator.clipboard.writeText(text)
+            .then(() => console.log("Copied!"))
+            .catch(err => console.error("Copy failed! Error: ", err))
+    }
 })

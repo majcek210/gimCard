@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(175, 172, 164);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+
+code {
+    background-color: rgb(109, 109, 109);
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.main_title {
+    font-size: 40px;
+    text-decoration: none;
+    color: aliceblue
+}
+
+.navbar {
+    display: flex;
+    background-color: #1b1a19;
+    padding: 15px;
+    margin: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.navbutton {
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(75, 70, 67);
+    color: aliceblue;
+    border-radius: 3px;
+    font-size: large;
+    padding: 5px
+}
+
+.navlinks {
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.footer_link {
+    text-decoration: none;
+    color: #726f6b
+}

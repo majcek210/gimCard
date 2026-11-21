@@ -31,7 +31,7 @@ app.get("/", (req,res) => {
 })
 
 //other parts of the site
-app.get("selfhost", (req, res) => {
+app.get("/selfhost", (req, res) => {
     res.sendFile(getPage("selfhost"))
 })
 

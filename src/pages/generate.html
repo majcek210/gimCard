@@ -1,124 +1,96 @@
 <html lang="en">
-    <head>
-        <title>Generate your card</title>
-        <meta charset="UTF-8">
-        <style>
-             .main_title {
-                font-size:40px;
-                text-decoration: none;
-                color:aliceblue
 
-            }
-            .navbar {
-                display: flex;
-                background-color: #1b1a19;
-                padding: 20px;
-            }
-            .navbutton {
-                padding: 10px;
-                text-decoration: none;
-                background-color: #726f6b;
-                color: wheat;
-                border-radius: 5px;
-                font-size: 20px;
-            }
-            .navlinks {
-                display: flex;
-                padding-left: 20px;
-                gap: 20px;
-            }
+<head>
+    <title>Generate your card</title>
+    <meta charset="UTF-8">
+    <style>
+        .code_showcase {
+            margin-right: 20px;
+            display: flex;
+        }
 
-            .footer_container {
-                display: flex;
-                justify-content: center;
-                padding: 20px;
-            }
-            .footer_link {
-                text-decoration: none;
-                color: #726f6b
-            }
+        .copy-btn {
+            margin-left: 5px;
+            background-color: #383838;
+            border: none;
+            border-radius: 5px;
+        }
 
-            body {
-                background-color: #1b1a19;
-                color: aliceblue;
-                font-family: Arial, Helvetica, sans-serif;
-            }
+        #username {
+            background-color: #726f6b;
+            border: 3px solid black;
+            border-radius: 5px;
+        }
 
-            .code_showcase {
-                background-color: #726f6b;
-                padding: 20px;
-                
-            }
+        #username :hover {
+            border: 3px solid darkgray
+        }
 
-            .copy-btn {
-                background-color: #383838;
-                border: none;
-                border-radius: 5px;
-            }
+        #copy_btn_code {
+            background-color: #726f6b;
+            border: 3px solid black;
+        }
+        #generate {
+            background-color: #726f6b;
+            border: 2px double black;
+            color: aliceblue;
+            border-radius: 2px
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <script src="/scripts/generate.js" defer></script>
+</head>
 
-            #username {
-                color:#726f6b
-            }
-            
-        </style>
-        <script src="/scripts/generate.js" defer></script>
-    </head>
-    <body>
-             <div class="navbar">
-                    <a href="/" class="main_title">Gimcard</a>
+<body>
+    <div class="navbar">
+        <a href="/" class="main_title">Gimcard</a>
 
-                <div class="navlinks">
-                    <a class="navbutton" href="/generate">Generate</a>
-                </div>
+        <div class="navlinks">
+            <a class="navbutton" href="/generate">Generate</a>
+            <a class="navbutton" href="/selfhost">Selfhost</a>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1>Generate your card</h1>
+            <p><b>Create</b> & <b>customize</b> your card down bellow</p>
+        </div>
+        <div class="selection_container">
+            <form id="generate-form">
+                <p>Username:</p>
+
+                <input type="text" id="username" name="username" required>
+                <input type="submit" id="generate" value="Generate">
+            </form>
+        </div>
+        <div class="code_showcase_container">
+            <h1>Code</h1>
+            <p>Copy the code bellow and paste it in to your README.md</p>
+            <div class="code_showcase">
+                <code>
+                    Generate the card first!
+                </code>
+                <button id="copy_btn_code" class="copy-btn" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="8" y="8" width="13" height="13" rx="2" />
+                        <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" />
+                    </svg>
+                </button>
             </div>
-            <div>
-                <div>
-                    <h1>Generate your card</h1>
-                    <p><b>Create</b> & <b>customize</b> your card down bellow</p>
-                </div>
-                <div class="selection_container">
-                    <form id="generate-form">
-                        <p>Username:</p>
+        </div>
+    </div>
+    <div id="preview-container" hidden>
+        <p>live preview</p>
+        <img src="" id="card-preview" alt="Generated Github card preview">
+    </div>
+    <footer>
+        <div class="footer_container">
+            <p>Made by <a class="footer_link" href="https://github.com/majcek210">majcek210</a>. Uptime is not
+                guaranteed.</p>
+        </div>
+    </footer>
 
-                        <input type="text" id="username" name="username">
-                        <input type="submit" value="Generate">
-                    </form>
-                </div>
-                <div class="code_showcase_container">
-                    <h1>Code</h1>
-                    <p>Copy the code bellow and paste it in to your README.md</p>
-                    <div class="code_showcase">
-                        <code>
-                            Generate the card first!
-                        </code>
-                        <button class="copy-btn" onclick="copyText()">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <rect x="8" y="8" width="13" height="13" rx="2"/>
-                                <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div id="preview-container" hidden>
-                <p>live preview</p>
-                <img src="" id="card-preview" alt="Generated Github card preview">
-            </div>
-            <footer>
-                <div class="footer_container">
-                    <p>Made by <a class="footer_link" href="https://github.com/majcek210">majcek210</a>. Uptime is not guaranteed.</p>
-                </div>
-            </footer>
-            
-        </body>
+</body>
+
 </html>

@@ -1,19 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head lang="en">
-        <title>How to selfhost?</title>
-        <meta author="majcek210">
-    </head>
-    <body>
+
+<head lang="en">
+    <title>How to selfhost?</title>
+    <meta author="majcek210">
+    <style>
+
+        .coolify_steps {
+            background-color: rgb(109, 109, 109);
+            border: 2px darkgray solid;
+            border-radius: 5px;
+        }
+
+        li {
+            padding-bottom: 4px;
+            margin-bottom: 4px
+        }
+
+    </style>
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/" class="main_title">Gimcard</a>
+
+        <div class="navlinks">
+            <a class="navbutton" href="/generate">Generate</a>
+            <a class="navbutton" href="/selfhost">Selfhost</a>
+        </div>
+    </div>
+    <div class="description">
         <h1>How to selfhost?</h1>
-        <p>You can selfhost this software with cloning the repo then using either **Dockerfile** or **docker compose**</p>
-        <h2>Option 1: Docker file</h2>
-        <p>1. You will have to clone this repositiory</p>
-        <p>2. Build this image using the Dockerfile in a root directory</p>
-        <p>3. Deploy using docker</p>
-        <h2>Option 2: Docker compose</h2>
-        <p>1. You will have to clone this repository</p>
-        <p>2. Run the compose and docker will build the image for you.</p>
-        
-    </body>
+        <p>If you want to selfhost this shitty software you can do this with options bellow (:</p>
+        <p>System requirements: docker</p>
+        <p>You will still need to import/load your env variables, see the <a
+                href="https://github.com/majcek210/gimCard/blob/main/.env.example"><b>.env.example</b></a> for required
+            variables.</p>
+    </div>
+
+    <div class="dockerfile">
+        <h2>Option 1: Dockerfile</h2>
+        <p>This option is recommended for bare docker installations.</p>
+
+        <ol class="steps">
+            <li>
+                You will have to clone this repository
+                <br>
+                <code>git clone https://github.com/majcek210/gimCard</code>
+            </li>
+            <li>
+                Go to repo directory
+                <br>
+                <code>cd gimCard</code>
+            </li>
+            <li>
+                Build the image
+                <br>
+                <code>docker build -t gimcard:latest .</code>
+            </li>
+            <li>
+                Run the image
+                <br>
+                <code>docker run -d -p 6767:6767 --name gimCard gimcard:latest</code>
+            </li>
+        </ol>
+    </div>
+    <h2>Option 2: Docker compose</h2>
+    <p>For normal docker compose installations.</p>
+    <div class="compose">
+        <ol>
+            <li>
+                You will have to clone this repository
+                <br>
+                <code>git clone https://github.com/majcek210/gimCard</code>
+            </li>
+            <li>
+                Go to repo directory
+                <br>
+                <code>cd gimCard</code>
+            </li>
+            <li>
+                Bring up docker compose service
+                <br>
+                <code>docker compose -f docker-compose.yml up </code>
+            </li>
+
+        </ol>
+    </div>
+    <div class="coolify">
+        <h2>
+            Option 3: coolify
+        </h2>
+        <p>If you selfhost and prefer some UI you probably use coolify. Here are the steps to configure this on coolify.
+        </p>
+        <ol>
+            <li class="coolify_steps">New resource > select public repository</li>
+            <li class="coolify_steps">Select your server</li>
+            <li class="coolify_steps">Enter the repo URL(https://github.com/majcek210/gimCard)</li>
+            <li class="coolify_steps">Coolify should automaticly detect it's settings, if not enter following:
+                <ul>
+                    <li>Branch: main</li>
+                    <li>Build pack: Docker Compose</li>
+                    <li>Base directory: /</li>
+                    <li>Compose file: /docker-compose.yml</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <p>Made by <a class="footer_link" href="https://github.com/majcek210">majcek210</a>. Uptime is not
+                guaranteed.</p>
+        </div>
+    </footer>
+</body>
+
 </html>
